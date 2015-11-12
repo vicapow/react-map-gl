@@ -445,7 +445,7 @@ var MapGL = React.createClass({
     var mapStyle = this.state.mapStyle;
     if (mapStyle !== this.state.prevMapStyle) {
       if (mapStyle instanceof Immutable.Map) {
-        this._setDiffStyle(this.state.prevMapStyle, mapStyle);
+        this._getMap().setStyle(mapStyle.toJS());
       } else {
         this._getMap().setStyle(mapStyle);
       }
